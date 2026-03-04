@@ -1,0 +1,13 @@
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+control = np.random.normal(50,5,30)
+treatment = np.random.normal(55,5,30)
+
+t,p = stats.ttest_ind(control,treatment)
+
+print("p value:",p)
+
+plt.boxplot([control,treatment])
+plt.show()
