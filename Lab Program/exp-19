@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+data = {
+    "customer_id":[1,2,3,4,5,6,7,8,9,10],
+    "amount_spent":[200,500,150,800,1200,300,700,1000,400,900],
+    "items":[2,5,1,7,10,3,6,8,4,9]
+}
+
+df = pd.DataFrame(data)
+
+X = df[["amount_spent","items"]]
+
+kmeans = KMeans(n_clusters=3, random_state=0)
+
+df["cluster"] = kmeans.fit_predict(X)
+
+print(df)
+
+plt.scatter(df["amount_spent"], df["items"], c=df["cluster"])
+plt.xlabel("Amount Spent")
+plt.ylabel("Items Purchased")
+plt.title("Customer Segmentation")
+plt.show()
