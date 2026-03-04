@@ -1,0 +1,26 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    "name":["Ronaldo","Messi","Neymar","Mbappe","Salah","Kane","Son","Haaland"],
+    "age":[38,36,31,25,31,30,31,24],
+    "position":["Forward","Forward","Forward","Forward","Forward","Forward","Forward","Forward"],
+    "goals":[25,22,18,30,20,24,19,35],
+    "salary":[500,450,400,420,380,390,370,410]
+}
+
+df = pd.DataFrame(data)
+
+print(df.nlargest(5,"goals")[["name","goals"]])
+print(df.nlargest(5,"salary")[["name","salary"]])
+
+avg_age = df["age"].mean()
+print("Average Age:", avg_age)
+
+print(df[df["age"] > avg_age]["name"])
+
+df["position"].value_counts().plot(kind="bar")
+plt.xlabel("Position")
+plt.ylabel("Count")
+plt.title("Players by Position")
+plt.show()
