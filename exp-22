@@ -1,9 +1,0 @@
-from sklearn.tree import DecisionTreeClassifier
-
-X = [[25,30000],[35,50000],[45,60000],[20,20000]]  # age, income
-y = [0,1,1,0]  # 0 = No Purchase, 1 = Purchase
-
-model = DecisionTreeClassifier()
-model.fit(X,y)
-
-print(model.predict([[30,40000]]))
