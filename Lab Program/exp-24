@@ -1,0 +1,7 @@
+products = ['A','B','A','C','A','B']
+
+freq = {}
+for p in products:
+    freq[p] = freq.get(p,0)+1
+
+print("Most Popular Product:", max(freq, key=freq.get))
