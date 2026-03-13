@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {'size':[7,8,7,9,8,7]}
+df = pd.DataFrame(data)
+
+freq = df['size'].value_counts()
+print(freq)
+
+freq.plot(kind='bar')
+plt.show()
