@@ -1,0 +1,6 @@
+import pandas as pd
+
+data = {'rating':[4,5,3,4,5]}
+df = pd.DataFrame(data)
+
+print("Average Rating:", df['rating'].mean())
